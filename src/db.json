@@ -1,0 +1,69 @@
+{
+  "decks": [
+    {
+      "id": "1",
+      "name": "React Basics",
+      "description": "A collection of flashcards covering the basics of React.",
+      "favorite": false,
+      "author": null,
+      "lastVisitedAt": "2024-01-01",
+      "cards": [
+        {
+          "id": "101",
+          "question": "What is React?112",
+          "answer": "React is a JavaScript library for building user interfaces.",
+          "createdAt": "2022-05-01",
+          "updatedAt": "2024-07-15",
+          "difficulty": "Intermediate",
+          "favorite": true
+        },
+        {
+          "id": "102",
+          "question": "What is JSX?",
+          "answer": "JSX is a syntax extension for JavaScript used with React to describe what the UI should look like.",
+          "createdAt": "2022-05-02",
+          "updatedAt": "2024-07-14",
+          "difficulty": "Beginner",
+          "favorite": true
+        },
+        {
+          "id": "103",
+          "question": "What is JSX2?",
+          "answer": "JSX is a syntax extension for JavaScript used with React to describe what the UI should look like.",
+          "createdAt": "2022-05-02",
+          "updatedAt": "2022-05-06",
+          "difficulty": "Beginner",
+          "favorite": false
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "React Hooks",
+      "author": null,
+      "description": "A collection of flashcards covering React Hooks.",
+      "favorite": true,
+      "lastVisitedAt": "2024-04-01",
+      "cards": [
+        {
+          "id": "201",
+          "question": "What is useState?",
+          "answer": "useState is a hook that allows you to add state to functional components in React.",
+          "createdAt": "2022-06-01",
+          "updatedAt": "2024-07-13",
+          "difficulty": "Intermediate",
+          "favorite": false
+        },
+        {
+          "id": "202",
+          "question": "What is useEffect?",
+          "answer": "useEffect is a hook that allows you to perform side effects in functional components in React.",
+          "createdAt": "2022-06-02",
+          "updatedAt": "2022-06-06",
+          "difficulty": "Intermediate",
+          "favorite": true
+        }
+      ]
+    }
+  ]
+}
