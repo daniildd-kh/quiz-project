@@ -24,6 +24,7 @@ const RegisterForm = () => {
     name: "",
     email: "",
     password: "",
+    number: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,11 +35,11 @@ const RegisterForm = () => {
     }));
   };
 
-  const handleRepeatedPassword = (repeatedPassword: string) =>{
-    if(repeatedPassword !== formData.password){
-      return 
+  const handleRepeatedPassword = (repeatedPassword: string) => {
+    if (repeatedPassword !== formData.password) {
+      return;
     }
-  }
+  };
 
   const handleFormSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();

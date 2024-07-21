@@ -3,6 +3,7 @@ import {
   getAuth,
   signInWithCustomToken,
   signInWithEmailAndPassword,
+  updatePhoneNumber,
   updateProfile,
 } from "firebase/auth";
 import {

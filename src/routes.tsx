@@ -6,6 +6,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import AuthorizationPage from "./pages/authorization-page/authorization-page.tsx";
 import HomePage from "./pages/home-page/home-page.tsx";
 import { OnlyAuthRoute, OnlyUnAuthRoute } from "./hoc/protected-route.tsx";
+import ProfilePage from "./pages/profile-page/profite-page.tsx";
 
 export const routes = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "profile",
+        element: <OnlyAuthRoute component={<ProfilePage />} />,
       },
       {
         path: "your-decks",

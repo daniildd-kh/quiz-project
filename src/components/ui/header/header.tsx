@@ -130,11 +130,16 @@ const HeaderUI: React.FC<HeaderUIProps> = ({
             id="profile-menu"
           >
             {userName && (
-                <Typography sx={{display: 'flex', alignItems: "center", gap: '5px'}}><AccountCircleIcon />{userName}</Typography>
+              <Typography
+                sx={{ display: "flex", alignItems: "center", gap: "5px" }}
+              >
+                <AccountCircleIcon />
+                {userName}
+              </Typography>
             )}
-            <NavLink to="/login">
-              <MenuItem>Профиль</MenuItem>
-            </NavLink>
+            <MenuItem>
+              <NavLink to="/profile">Профиль </NavLink>
+            </MenuItem>
             <MenuItem onClick={() => {}}>Настройки</MenuItem>
             <MenuItem onClick={() => {}}>Выйти</MenuItem>
           </Menu>
