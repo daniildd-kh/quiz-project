@@ -10,7 +10,7 @@ export type TFlashCard = {
   createdAt: string,
   updatedAt: string,
   difficulty: string | null,
-  favorite: boolean | null
+  favorite: boolean
 }
 export type TUser = {
   id: string;
@@ -23,7 +23,7 @@ export type TDeck = {
   name: string,
   author: TUser | null,
   description: string | null,
-  favorite: boolean | null,
+  favorite: boolean,
   lastVisitedAt: string,
   cards: TFlashCard[];
 }

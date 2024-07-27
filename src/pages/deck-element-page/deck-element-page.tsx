@@ -1,5 +1,5 @@
 import React from 'react';
-import DeckElement from '../../components/common/deck-element/deck-element';
+import DeckElement from '../../components/common/deck/deck-element';
 
 const DeckElementPage = () => {
   return (

@@ -27,7 +27,7 @@ export const routes = createBrowserRouter([
         element: <OnlyAuthRoute component={<DecksListPage />} />,
       },
       {
-        path: "flash-cards/:deckId",
+        path: "decks/:deckId",
         element: <OnlyAuthRoute component={<DeckElementPage />} />,
       },
     ],

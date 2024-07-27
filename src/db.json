@@ -13,7 +13,7 @@
           "question": "What is React?112",
           "answer": "React is a JavaScript library for building user interfaces.",
           "createdAt": "2022-05-01",
-          "updatedAt": "2024-07-15",
+          "updatedAt": "2024-07-27",
           "difficulty": "Intermediate",
           "favorite": true
         },
@@ -22,9 +22,9 @@
           "question": "What is JSX?",
           "answer": "JSX is a syntax extension for JavaScript used with React to describe what the UI should look like.",
           "createdAt": "2022-05-02",
-          "updatedAt": "2024-07-14",
+          "updatedAt": "2024-07-27",
           "difficulty": "Beginner",
-          "favorite": true
+          "favorite": false
         },
         {
           "id": "103",

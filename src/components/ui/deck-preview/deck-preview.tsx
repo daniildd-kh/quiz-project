@@ -27,7 +27,7 @@ const DeckPreview: React.FC<DeckPreviewProps> = ({ deck }) => {
       <Grid container>
         <Grid item xs={10}>
         <CardActionArea>
-          <StyledLink to={`/flash-cards/${deck.id}`}>
+          <StyledLink to={`/decks/${deck.id}`}>
           <CardContent>
             <Typography variant="h5" component="div">
               {deck.name}
