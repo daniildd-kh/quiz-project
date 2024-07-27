@@ -16,21 +16,21 @@ import {
   TextField,
   Toolbar,
   Typography,
-} from "@mui/material";
-import React, { useState } from "react";
-import LogoDevIcon from "@mui/icons-material/LogoDev";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import AddIcon from "@mui/icons-material/Add";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { appHeaderMenuSx, appHeaderMenuTextSx } from "./sx-styles";
-import SearchIcon from "@mui/icons-material/Search";
-import { NavLink } from "react-router-dom";
-import { useAppSelector } from "../../../services/store/store";
+} from '@mui/material';
+import React from 'react';
+import LogoDevIcon from '@mui/icons-material/LogoDev';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import AddIcon from '@mui/icons-material/Add';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { appHeaderMenuSx, appHeaderMenuTextSx } from './sx-styles';
+import SearchIcon from '@mui/icons-material/Search';
+import { NavLink } from 'react-router-dom';
+import { useAppSelector } from '../../../services/store/store';
 
 interface HeaderUIProps {
   onMenuClick: (
     event: React.MouseEvent<HTMLButtonElement>,
-    type: string
+    type: string,
   ) => void;
   onNotificationsClick: () => void;
   onMenuClose: () => void;
@@ -49,12 +49,12 @@ const HeaderUI: React.FC<HeaderUIProps> = ({
 }) => {
   const userName = useAppSelector((state) => state.userSlice.user?.name);
   return (
-    <AppBar position="static" sx={{ mb: "30px" }}>
+    <AppBar position="static" sx={{ mb: '30px' }}>
       <Toolbar
         sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          color: "#F2F5FA",
+          display: 'flex',
+          justifyContent: 'space-between',
+          color: '#F2F5FA',
         }}
       >
         <Box sx={appHeaderMenuSx}>
@@ -71,14 +71,14 @@ const HeaderUI: React.FC<HeaderUIProps> = ({
           </NavLink>
         </Box>
         <TextField
-          sx={{ width: "30%" }}
+          sx={{ width: '30%' }}
           color="secondary"
           id="search"
           label="Поиск по карточкам"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon sx={{ color: "#F2F5FA" }} />
+                <SearchIcon sx={{ color: '#F2F5FA' }} />
               </InputAdornment>
             ),
           }}
@@ -87,11 +87,11 @@ const HeaderUI: React.FC<HeaderUIProps> = ({
           focused
         />
         <Box sx={appHeaderMenuSx}>
-          <IconButton color="inherit" onClick={(e) => onMenuClick(e, "add")}>
+          <IconButton color="inherit" onClick={(e) => onMenuClick(e, 'add')}>
             <AddIcon />
           </IconButton>
           <Menu
-            open={menuType === "add"}
+            open={menuType === 'add'}
             anchorEl={anchorMenuEl}
             onClose={onMenuClose}
             id="add-menu"
@@ -119,19 +119,19 @@ const HeaderUI: React.FC<HeaderUIProps> = ({
           </Dialog>
           <IconButton
             color="inherit"
-            onClick={(e) => onMenuClick(e, "profile")}
+            onClick={(e) => onMenuClick(e, 'profile')}
           >
             <AccountCircleIcon />
           </IconButton>
           <Menu
-            open={menuType === "profile"}
+            open={menuType === 'profile'}
             anchorEl={anchorMenuEl}
             onClose={onMenuClose}
             id="profile-menu"
           >
             {userName && (
               <Typography
-                sx={{ display: "flex", alignItems: "center", gap: "5px" }}
+                sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}
               >
                 <AccountCircleIcon />
                 {userName}

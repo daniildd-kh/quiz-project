@@ -1,30 +1,17 @@
-import {
-  Box,
-  Button,
-  FormControl,
-  Grid,
-  TextField,
-  Typography,
-} from "@mui/material";
-import React, { useState } from "react";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
-import { useAppDispatch } from "../../../../services/store/store";
-import { AuthorizationButton, FormInput, FormInputLabel } from "../styles";
-import { useNavigate } from "react-router-dom";
-import { fetchCreateUserWithEmailAndPassword } from "../../../../services/store/actions";
+import { Box, FormControl, Grid, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { useAppDispatch } from '../../../../services/store/store';
+import { AuthorizationButton, FormInput, FormInputLabel } from '../styles';
+import { fetchCreateUserWithEmailAndPassword } from '../../../../services/store/actions';
 
 const RegisterForm = () => {
   const dispatch = useAppDispatch();
   const [formData, setFormData] = useState({
-    id: "",
-    name: "",
-    email: "",
-    password: "",
-    number: "",
+    id: '',
+    name: '',
+    email: '',
+    password: '',
+    number: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,11 +22,11 @@ const RegisterForm = () => {
     }));
   };
 
-  const handleRepeatedPassword = (repeatedPassword: string) => {
-    if (repeatedPassword !== formData.password) {
-      return;
-    }
-  };
+  // const handleRepeatedPassword = (repeatedPassword: string) => {
+  //   if (repeatedPassword !== formData.password) {
+  //     return;
+  //   }
+  // };
 
   const handleFormSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
@@ -50,10 +37,10 @@ const RegisterForm = () => {
   return (
     <Box
       sx={{
-        marginTop: "30px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "40px",
+        marginTop: '30px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '40px',
       }}
     >
       <Typography component="h1" variant="h5">

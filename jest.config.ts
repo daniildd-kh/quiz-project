@@ -7,16 +7,11 @@ import type { JestConfigWithTsJest } from 'ts-jest';
 
 const config: JestConfigWithTsJest = {
   transform: {
-    '^.+\\.tsx?$': [
-      'ts-jest',
-      {
-        
-      },
-    ],
+    '^.+\\.tsx?$': ['ts-jest', {}],
   },
   collectCoverage: true,
-  coverageDirectory: "coverage",
-  coverageProvider: "v8",
+  coverageDirectory: 'coverage',
+  coverageProvider: 'v8',
   preset: 'ts-jest',
 };
 

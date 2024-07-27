@@ -1,17 +1,17 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
-import DecksListUI from "../../ui/decks-list/decks-list";
-import { ModuleOption, TDeck } from "../../../utils/types";
-import { useAppDispatch, useAppSelector } from "../../../services/store/store";
+import { useEffect, useState } from 'react';
+import DecksListUI from '../../ui/decks-list/decks-list';
+import { ModuleOption, TDeck } from '../../../utils/types';
+import { useAppSelector } from '../../../services/store/store';
 
 const DecksList = () => {
   const { decks, isLoading, error } = useAppSelector(
-    (state) => state.decksSlice
+    (state) => state.decksSlice,
   );
 
   const moduleOptions: ModuleOption[] = [
-    { label: "Создано", type: "created" },
-    { label: "Недавно просмотренные", type: "recent" },
-    { label: "Изученные", type: "studied" },
+    { label: 'Создано', type: 'created' },
+    { label: 'Недавно просмотренные', type: 'recent' },
+    { label: 'Изученные', type: 'studied' },
   ];
 
   const [selectedModuleOption, setSelectedModuleOption] =
@@ -21,7 +21,7 @@ const DecksList = () => {
     setSelectedModuleOption(option);
   };
 
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const [decksEl, setDecksEl] = useState<TDeck[]>(decks);
 
   const handleSearchQuery = (value: string) => {
@@ -33,7 +33,7 @@ const DecksList = () => {
       return decks;
     }
     const filteredDecks = decks.filter((deck) =>
-      deck.name.toLowerCase().includes(searchText.toLowerCase())
+      deck.name.toLowerCase().includes(searchText.toLowerCase()),
     );
     return filteredDecks;
   };

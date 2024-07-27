@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Box, Stack } from "@mui/system";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Box, Stack } from '@mui/system';
 import {
   Card,
   CardActions,
@@ -8,13 +8,13 @@ import {
   Divider,
   Grid,
   Typography,
-} from "@mui/material";
-import { useAppDispatch, useAppSelector } from "../../../services/store/store";
-import { fetchUpdateFlashCardFavorite } from "../../../services/store/actions";
-import { TFlashCard } from "../../../utils/types";
-import FlashCard from "../flash-card/flash-card";
-import FlashCardActions from "../flash-card-actions/flash-card-actions";
-import FlashCardEditModal from "../flash-card-edit/flash-card-edit";
+} from '@mui/material';
+import { useAppDispatch, useAppSelector } from '../../../services/store/store';
+import { fetchUpdateFlashCardFavorite } from '../../../services/store/actions';
+import { TFlashCard } from '../../../utils/types';
+import FlashCard from '../flash-card/flash-card';
+import FlashCardActions from '../flash-card-actions/flash-card-actions';
+import FlashCardEditModal from '../flash-card-edit/flash-card-edit';
 
 const DeckElement = () => {
   const decks = useAppSelector((state) => state.decksSlice.decks);
@@ -44,7 +44,7 @@ const DeckElement = () => {
 
   const handleNext = () => {
     setCurrentIndex(
-      (prevIndex) => (prevIndex + 1) % (selectedDeck?.cards.length || 1)
+      (prevIndex) => (prevIndex + 1) % (selectedDeck?.cards.length || 1),
     );
     setShowAnswer(false);
   };
@@ -53,7 +53,7 @@ const DeckElement = () => {
     setCurrentIndex(
       (prevIndex) =>
         (prevIndex - 1 + (selectedDeck?.cards.length || 1)) %
-        (selectedDeck?.cards.length || 1)
+        (selectedDeck?.cards.length || 1),
     );
     setShowAnswer(false);
   };
@@ -62,7 +62,7 @@ const DeckElement = () => {
     setShowModal(isOpen);
   };
 
-  const handleCardClick = (event: React.SyntheticEvent) => {
+  const handleCardClick = () => {
     setShowAnswer((prevState) => !prevState);
   };
 
@@ -71,18 +71,18 @@ const DeckElement = () => {
   };
 
   const handleTextToSpeech = (text: string) => {
-    if ("speechSynthesis" in window) {
+    if ('speechSynthesis' in window) {
       const textForSpeech = new SpeechSynthesisUtterance(text);
       if (voices.length > 0) {
-        const rusVoice = voices.find((voice) => voice.lang === "ru-RU") || null;
-        const engVoice = voices.find((voice) => voice.lang === "en-US") || null;
+        const rusVoice = voices.find((voice) => voice.lang === 'ru-RU') || null;
+        const engVoice = voices.find((voice) => voice.lang === 'en-US') || null;
 
         const isEnglishText = /[a-zA-Z]/.test(text);
         textForSpeech.voice = isEnglishText ? engVoice : rusVoice;
         synth.speak(textForSpeech);
       }
     } else {
-      alert("Ваш браузер не поддерживает эту функцию");
+      alert('Ваш браузер не поддерживает эту функцию');
     }
   };
 
@@ -93,7 +93,7 @@ const DeckElement = () => {
           deckId: selectedDeck.id,
           cardId: currentCard.id,
           cardData: { favorite: !currentCard.favorite },
-        })
+        }),
       );
     }
   };
@@ -118,17 +118,27 @@ const DeckElement = () => {
       <Box>
         <Grid container>
           <Grid item xs={12}>
-            <Typography component="h2" fontSize="20px" fontWeight="700" sx={{mb: '40px'}}>
+            <Typography
+              component="h2"
+              fontSize="20px"
+              fontWeight="700"
+              sx={{ mb: '40px' }}
+            >
               Терминов в модуле: {selectedDeck?.cards.length}
             </Typography>
             <Stack display="flex" flexDirection="column" gap="20px">
-              {selectedDeck?.cards.map((card, index) => (
+              {selectedDeck?.cards.map((card) => (
                 <Card
                   key={card.id}
-                  sx={{ minWidth: "350px", minHeight: "100px", display: 'flex', justifyContent: 'space-between', alignItems: 'center'
-                   }}
+                  sx={{
+                    minWidth: '350px',
+                    minHeight: '100px',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }}
                 >
-                  <CardContent sx={{ display: "flex", gap: "10px" }}>
+                  <CardContent sx={{ display: 'flex', gap: '10px' }}>
                     <Typography fontSize="18px">{card.question}</Typography>
                     <Divider orientation="vertical" flexItem />
                     <Typography fontSize="18px">{card.answer}</Typography>
@@ -138,7 +148,11 @@ const DeckElement = () => {
                       isFavorite={card.favorite}
                       currentText={showAnswer ? card.answer : card.question}
                       handleEdit={() => handleEditCardModal(true)}
-                      handleTextToSpeech={() => handleTextToSpeech(showAnswer ? card.answer : card.question)}
+                      handleTextToSpeech={() =>
+                        handleTextToSpeech(
+                          showAnswer ? card.answer : card.question,
+                        )
+                      }
                       handleFavorite={() => handleFavorite(card)}
                     />
                   </CardActions>

@@ -1,7 +1,6 @@
 import { Box, Grid, Switch, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { Item } from './styles';
-import CircleIcon from '@mui/icons-material/Circle';
 
 interface ProfileTabSettingsProps {
   title: string;
@@ -32,7 +31,7 @@ const ProfileTabItemSettings = ({
   };
 
   const label = { inputProps: { 'aria-label': 'Переключатель' } };
-  
+
   return (
     <Item>
       <Grid container spacing={2}>

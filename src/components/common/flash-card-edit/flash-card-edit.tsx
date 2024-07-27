@@ -6,26 +6,26 @@ import {
   DialogContent,
   DialogTitle,
   TextField,
-} from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { useAppDispatch } from "../../../services/store/store";
-import { fetchUpdateFlashCardQA } from "../../../services/store/actions";
-import styles from './styles.module.css'
+} from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { useAppDispatch } from '../../../services/store/store';
+import { fetchUpdateFlashCardQA } from '../../../services/store/actions';
+import styles from './styles.module.css';
 
 interface FlashCardEditModalProps {
   open: boolean;
   handleOpen: (isOpen: boolean) => void;
   deckId: string;
-  card: {id: string, question: string; answer: string };
+  card: { id: string; question: string; answer: string };
 }
 
 const FlashCardEditModal: React.FC<FlashCardEditModalProps> = ({
   open,
   handleOpen,
   card,
-  deckId
+  deckId,
 }) => {
-  const [cardData, setCardData] = useState({ answer: "", question: "" });
+  const [cardData, setCardData] = useState({ answer: '', question: '' });
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const FlashCardEditModal: React.FC<FlashCardEditModalProps> = ({
 
   const handleFormSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    dispatch(fetchUpdateFlashCardQA({deckId, cardId: card.id, cardData}))
+    dispatch(fetchUpdateFlashCardQA({ deckId, cardId: card.id, cardData }));
     handleOpen(false);
   };
 
@@ -44,10 +44,11 @@ const FlashCardEditModal: React.FC<FlashCardEditModalProps> = ({
     <Dialog open={open} onClose={() => handleOpen(false)}>
       <DialogTitle>Редактирование карточки</DialogTitle>
       <DialogContent>
-        <Box className={styles.modalEditCard}
+        <Box
+          className={styles.modalEditCard}
           component="form"
           sx={{
-            "& .MuiTextField-root": { m: 1, width: "25ch" },
+            '& .MuiTextField-root': { m: 1, width: '25ch' },
           }}
           noValidate
           autoComplete="off"

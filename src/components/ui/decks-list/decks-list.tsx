@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React from 'react';
 import {
   Autocomplete,
   Box,
@@ -8,12 +8,12 @@ import {
   TextField,
   Toolbar,
   Typography,
-} from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import styles from "./styles.module.css";
-import DeckPreview from "../deck-preview/deck-preview";
-import { ModuleOption, TDeck, TDeckPreview } from "../../../utils/types";
-import DeckSkeleton from "../skeletons/decks.skeleton";
+} from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import styles from './styles.module.css';
+import DeckPreview from '../deck-preview/deck-preview';
+import { ModuleOption, TDeck } from '../../../utils/types';
+import DeckSkeleton from '../skeletons/decks.skeleton';
 
 interface DecksListUIProps {
   decks: TDeck[];
@@ -50,12 +50,12 @@ const DecksListUI: React.FC<DecksListUIProps> = ({
         </Typography>
         <Divider />
       </Toolbar>
-      <Divider sx={{ mb: "5px" }} />
+      <Divider sx={{ mb: '5px' }} />
       <Box
         sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "stretch",
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'stretch',
         }}
       >
         <Autocomplete
@@ -72,7 +72,7 @@ const DecksListUI: React.FC<DecksListUIProps> = ({
           )}
         />
         <TextField
-          sx={{ width: "40%" }}
+          sx={{ width: '40%' }}
           color="secondary"
           id="search-modules"
           label="Поиск модулей"
@@ -102,24 +102,23 @@ const DecksListUI: React.FC<DecksListUIProps> = ({
         )}
         {errorMessage && <p>Возникла ошибка во время загрузки модулей</p>}
         {decks.length === 0 ? (
-              <Box
-                sx={{
-                  mt: "10px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Typography variant="h3">Ничего не найдено</Typography>
-              </Box>
-            ) : (
-              <>
-                {decks.map((deck) => (
-                  <DeckPreview key={deck.id} deck={deck} />
-                ))}
-              </>
-            )
-          }
+          <Box
+            sx={{
+              mt: '10px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Typography variant="h3">Ничего не найдено</Typography>
+          </Box>
+        ) : (
+          <>
+            {decks.map((deck) => (
+              <DeckPreview key={deck.id} deck={deck} />
+            ))}
+          </>
+        )}
       </>
     </Box>
   );

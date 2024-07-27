@@ -1,11 +1,20 @@
-import React from "react";
-import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
-import { Card, CardActions, CardContent, Grid, Typography, Button, ButtonGroup, IconButton, Stack } from "@mui/material";
-import styles from "./styles.module.css";
-import { motion } from "framer-motion";
-import { transformStringToClue } from "../../../utils/utils";
-import { TDeck } from "../../../utils/types";
-import FlashCardActions from "../flash-card-actions/flash-card-actions";
+import React from 'react';
+import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
+import {
+  Card,
+  CardActions,
+  CardContent,
+  Grid,
+  Typography,
+  Button,
+  IconButton,
+  Stack,
+} from '@mui/material';
+import styles from './styles.module.css';
+import { motion } from 'framer-motion';
+import { transformStringToClue } from '../../../utils/utils';
+import { TDeck } from '../../../utils/types';
+import FlashCardActions from '../flash-card-actions/flash-card-actions';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
@@ -34,14 +43,16 @@ const FlashCard: React.FC<FlashCardProps> = ({
   handleCardClick,
   handleShowClue,
   handleTextToSpeech,
-  handleFavorite
+  handleFavorite,
 }) => {
   if (!deck) {
     return <Typography>Карточки не были найдены</Typography>;
   }
 
   const currentCard = deck.cards[currentIndex];
-  const currentStateCard = showAnswer ? currentCard.answer : currentCard.question;
+  const currentStateCard = showAnswer
+    ? currentCard.answer
+    : currentCard.question;
 
   return (
     <>
@@ -53,17 +64,17 @@ const FlashCard: React.FC<FlashCardProps> = ({
           <motion.div
             className={styles.box}
             animate={{ rotateX: showAnswer ? 360 : 0 }}
-            transition={{ duration: 1, type: "spring" }}
+            transition={{ duration: 1, type: 'spring' }}
           >
-            <Card onClick={handleCardClick} sx={{ width: "800px" }}>
+            <Card onClick={handleCardClick} sx={{ width: '800px' }}>
               <CardActions onClick={(event) => event.stopPropagation()}>
                 {showAnswer ? null : (
-                  <Button onClick={handleShowClue} sx={{ marginRight: "auto" }}>
+                  <Button onClick={handleShowClue} sx={{ marginRight: 'auto' }}>
                     {showClue ? (
                       <p>{transformStringToClue(currentCard.answer)}</p>
                     ) : (
                       <>
-                        <TipsAndUpdatesIcon sx={{ marginRight: "10px" }} />
+                        <TipsAndUpdatesIcon sx={{ marginRight: '10px' }} />
                         Показать подсказку
                       </>
                     )}
@@ -98,7 +109,7 @@ const FlashCard: React.FC<FlashCardProps> = ({
               <ArrowBackIcon />
             </IconButton>
             <Typography fontSize="18px">
-              {currentIndex + 1 + " / " + deck.cards.length}
+              {currentIndex + 1 + ' / ' + deck.cards.length}
             </Typography>
             <IconButton
               onClick={handleNext}

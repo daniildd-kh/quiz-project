@@ -1,9 +1,9 @@
-import React from "react";
-import { IconButton, Button, ButtonGroup } from "@mui/material";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import EditIcon from "@mui/icons-material/Edit";
-import VolumeUpIcon from "@mui/icons-material/VolumeUp";
+import React from 'react';
+import { ButtonGroup, IconButton } from '@mui/material';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import EditIcon from '@mui/icons-material/Edit';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 
 interface FlashCardActionsProps {
   isFavorite: boolean;
@@ -18,7 +18,7 @@ const FlashCardActions: React.FC<FlashCardActionsProps> = ({
   currentText,
   handleEdit,
   handleTextToSpeech,
-  handleFavorite
+  handleFavorite,
 }) => {
   return (
     <ButtonGroup>

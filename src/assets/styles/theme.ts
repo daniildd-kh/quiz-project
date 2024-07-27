@@ -1,8 +1,7 @@
 import { createTheme } from '@mui/material/styles';
 
-
 const theme = createTheme({
-    components: {
+  components: {
     MuiTypography: {
       styleOverrides: {
         root: {
@@ -24,8 +23,7 @@ const theme = createTheme({
     },
     text: {
       primary: '#090C11',
-    secondary: '#090C11'
-
+      secondary: '#090C11',
     },
     action: {
       active: '#221200',
@@ -36,6 +34,4 @@ const theme = createTheme({
   },
 });
 
-
-
-export default theme
+export default theme;

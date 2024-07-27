@@ -1,19 +1,19 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../../../services/store/store";
-import { Box, Grid, FormControl, Typography } from "@mui/material";
-import { FormInput, FormInputLabel, AuthorizationButton } from "../styles"; 
-import { redirect, useNavigate } from "react-router-dom";
-import { fetchSignInWithEmailAndPassword } from "../../../../services/store/actions";
+import React, { useState } from 'react';
+import {
+  useAppDispatch,
+  useAppSelector,
+} from '../../../../services/store/store';
+import { Box, Grid, FormControl, Typography } from '@mui/material';
+import { FormInput, FormInputLabel, AuthorizationButton } from '../styles';
+import { fetchSignInWithEmailAndPassword } from '../../../../services/store/actions';
 
 const LoginForm = () => {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-  const errorMessage = useAppSelector(state => state.userSlice.error);
+  const errorMessage = useAppSelector((state) => state.userSlice.error);
 
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,10 +36,10 @@ const LoginForm = () => {
   return (
     <Box
       sx={{
-        marginTop: "30px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "40px",
+        marginTop: '30px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '40px',
       }}
     >
       <Typography component="h1" variant="h5">
@@ -85,7 +85,11 @@ const LoginForm = () => {
               />
             </FormControl>
           </Grid>
-          {errorMessage && <Grid item xs={10}><Typography color='red'>{errorMessage}</Typography></Grid>}
+          {errorMessage && (
+            <Grid item xs={10}>
+              <Typography color="red">{errorMessage}</Typography>
+            </Grid>
+          )}
           <Grid item xs={10}>
             <AuthorizationButton
               fullWidth

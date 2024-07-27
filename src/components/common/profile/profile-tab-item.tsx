@@ -1,9 +1,7 @@
-import { Fab, Grid, Paper, Typography } from "@mui/material";
-import { Box, Stack, styled } from "@mui/system";
-import React from "react";
-import EditIcon from "@mui/icons-material/Edit";
-import Divider from "@mui/material/Divider";
-import {Item} from './styles.ts'
+import { Fab, Grid, Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import EditIcon from '@mui/icons-material/Edit';
+import { Item } from './styles.ts';
 
 interface ProfileTabProps {
   title: string;
@@ -16,13 +14,13 @@ const ProfileTabItem = ({ title, value, handleValue }: ProfileTabProps) => {
     <Item>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Typography component="h4" fontSize='16px'>
+          <Typography component="h4" fontSize="16px">
             {title}
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Box display='flex' flexDirection='row' alignItems='center'>
-            <Typography sx={{ opacity: 0.5, fontSize: "18px", mr: "auto" }}>
+          <Box display="flex" flexDirection="row" alignItems="center">
+            <Typography sx={{ opacity: 0.5, fontSize: '18px', mr: 'auto' }}>
               {value}
             </Typography>
             <Fab color="secondary" aria-label="edit" size="small">

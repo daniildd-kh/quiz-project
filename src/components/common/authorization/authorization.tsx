@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Box, CardActions, Typography } from "@mui/material";
-import { motion, AnimatePresence } from "framer-motion";
-import LoginForm from "../authorization-forms/login-form/login-form";
-import RegisterForm from "../authorization-forms/register-form/register-form";
+import { useState } from 'react';
+import { Box, CardActions } from '@mui/material';
+import { motion, AnimatePresence } from 'framer-motion';
+import LoginForm from '../authorization-forms/login-form/login-form';
+import RegisterForm from '../authorization-forms/register-form/register-form';
 import {
   CardAuthorization,
   CardButton,
@@ -10,7 +10,7 @@ import {
   CardIntroduction,
   CardText,
   CardTitle,
-} from "./styles";
+} from './styles';
 
 const MotionCardAuthorization = motion(CardAuthorization);
 
@@ -31,7 +31,7 @@ const Authorization = () => {
     >
       <AnimatePresence mode="wait">
         <MotionCardAuthorization
-          key={authorizationState ? "register" : "login"}
+          key={authorizationState ? 'register' : 'login'}
           initial="hidden"
           animate="visible"
           exit="hidden"

@@ -2,9 +2,7 @@ import React from 'react';
 import DeckElement from '../../components/common/deck/deck-element';
 
 const DeckElementPage = () => {
-  return (
-    <DeckElement/>
-  );
+  return <DeckElement />;
 };
 
 export default DeckElementPage;
