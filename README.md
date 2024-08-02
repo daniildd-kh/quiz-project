@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# QuizProject - в разработке 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Технологии, использованные в проекте
+`React, Redux Toolkit, Firebase, MUI, Framer Mition, React Router Dom, Vite, TypeScript, JSON Server`
 
-Currently, two official plugins are available:
+## Описание
+Этот проект представляет собой веб-приложение для эффективного обучения с использованием флеш-карточек. На данный момент реализованы система авторизации и регистрации, профиль пользователя, а также возможность редактировать и просматривать карточки. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Функциональные возможности
+1. Система авторизации и регистрации: Регистрация новых пользователей и авторизация существующих.
+2. Профиль пользователя: Просмотр личной информации.
+3. Есть возможность просматривать и редактировать существующие карточки
 
-## Expanding the ESLint configuration
+## Установка и запуск
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Неоходимо установить все зависимости `npm install`
+2. Настроить `Firebase` через [Firebase Console](https://console.firebase.google.com/)
+3. Запустить проект - `npm run dev`
 
-- Configure the top-level `parserOptions` property like this:
+## Состояние проекта
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Проект находится в разработке. Ожидаются следующие обновления:
+1. Добавление HomePage
+2. Добавление станицы для создания новых модулей
+3. Обновление дизайна шапки сайта
+4. Разделение приватных и публичных модулей
+5. Изменение интерфейса в карточках 
