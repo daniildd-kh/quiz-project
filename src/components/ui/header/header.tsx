@@ -49,7 +49,7 @@ const HeaderUI: React.FC<HeaderUIProps> = ({
 }) => {
   const userName = useAppSelector((state) => state.userSlice.user?.name);
   return (
-    <AppBar position="static" sx={{ mb: '30px' }}>
+    <AppBar position="static">
       <Toolbar
         sx={{
           display: 'flex',

@@ -10,14 +10,9 @@ import ProfilePage from './pages/profile-page/profite-page.tsx';
 
 export const routes = createBrowserRouter([
   {
-    path: '/',
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      {
-        path: '/',
-        element: <HomePage />,
-      },
       {
         path: 'profile',
         element: <OnlyAuthRoute component={<ProfilePage />} />,
@@ -39,5 +34,9 @@ export const routes = createBrowserRouter([
   {
     path: 'login',
     element: <Navigate to="/authorization" replace />,
+  },
+  {
+    path: '/',
+    element: <HomePage />,
   },
 ]);
